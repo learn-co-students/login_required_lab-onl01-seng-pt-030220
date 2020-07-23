@@ -30,8 +30,8 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-      if  session[:name] == nil 
-        session[:name]
+      if  ! session.include? "name"
+         session[:name] = nil
       else
        
         session.delete :name 
