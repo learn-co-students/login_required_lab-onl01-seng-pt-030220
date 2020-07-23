@@ -1,0 +1,5 @@
+<h1>Hello, <%= session[:name] %></h1>
+
+<% if current_user %>
+    <a href="/secret">Look at the Secret</a>
+<% end %>
