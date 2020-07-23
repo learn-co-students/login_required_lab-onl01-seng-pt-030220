@@ -6,9 +6,8 @@ Rails.application.routes.draw do
    # resources :secrets
   #end
  # resources :secrets
-  
-  #root 'application#hello'
-  
+ 
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
