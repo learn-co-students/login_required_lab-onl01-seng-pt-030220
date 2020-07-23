@@ -17,9 +17,7 @@ class SessionsController < ApplicationController
         if !session[:name].present?
             redirect_to '/login'
         else
-
             session[:name] = params[:name]
-
         end
 
         if !!session[:name] 
@@ -31,11 +29,16 @@ class SessionsController < ApplicationController
 
     end
 
+    def destroy
+      session.delete :name
+
+    end
+
     private
 
 
 def require_login
-    return head(:forbidden) unless session.include? :user_id  
+    return head(:forbidden) unless session.include? :session_id  
 end
 
 end
