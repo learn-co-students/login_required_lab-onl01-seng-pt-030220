@@ -24,7 +24,6 @@ RSpec.describe SessionsController do
       post :destroy
       expect(@request.session[:name]).to be nil
     end
-
     it 'clears session[:name] if it was set' do
       post :create, params: { name: 'Trinity' }
       expect(@request.session[:name]).to_not be nil
@@ -32,4 +31,5 @@ RSpec.describe SessionsController do
       expect(@request.session[:name]).to be nil
     end
   end
+  
 end
